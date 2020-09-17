@@ -1,0 +1,50 @@
+.Card-Parent{
+    margin: 0 auto;
+    width: 570px;
+    height: 270px;
+    margin-bottom:15em;
+}
+
+.Card{
+    width: 570px;
+    height: 270px;
+    padding: 2em;
+    background-color: black;
+    color: white;
+
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.Card-Number{
+    margin: 2.2em auto;
+}
+
+.Card-eDate{
+    float: left;
+    width: 75%;
+    text-align: left;
+}
+
+.Card-CVC{
+    float: right;
+    width: 25%;
+}
+
+.Card-Name{
+    text-align: left;
+    margin-top: 2.0em;
+    float: left;
+}
+
+.Visable h3{
+    width: 65%;
+    float:left;
+}
+
+.Visable button{
+    border: none;
+    background-color: inherit;
+    float: left;
+    margin-top: 1.2em;
+}
