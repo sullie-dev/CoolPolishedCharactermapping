@@ -2,7 +2,6 @@
   "name": "application",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://waterlogged-bland-startup.herokuapp.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -12,6 +11,7 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "uuid4": "^2.0.2"
   },

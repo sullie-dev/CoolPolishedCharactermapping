@@ -12,7 +12,10 @@ class ListCards extends Component{
         }
     }
     async componentDidMount(){
-        await axios.get("/ic_1H3N18JHB9Lj4R4fKCIAHJEm")
+      const cardID = this.props.match.params.id
+      const url = `https://waterlogged-bland-startup.herokuapp.com/${cardID}`;
+      const nocors = `https://cors-anywhere.herokuapp.com/`;
+        axios.get( nocors + url)
         .then(response => {
             this.setState({cardInfo:[...this.state.cardInfo, response.data]})
         }).catch(err => console.error(err));
