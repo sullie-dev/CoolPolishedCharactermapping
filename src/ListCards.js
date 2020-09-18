@@ -20,7 +20,9 @@ class ListCards extends Component {
     const nocors = `https://cors-anywhere.herokuapp.com/`;
     axios
       .get(nocors + url)
-      .then((response) => {})
+      .then((response) => {
+        this.setState({ cardInfo: [...this.state.cardInfo, response.data], is_loading: false});
+      })
       .catch((err) => console.error(err));
   }
   render() {
@@ -31,7 +33,9 @@ class ListCards extends Component {
     return (
       <div>
         <h1>CardViewer</h1>
-        <div className={!this.state.is_loading ? "" : "triforce-container"}></div>
+        <div
+          className={!this.state.is_loading ? "" : "triforce-container"}
+        ></div>
         <div className={!this.state.is_loading ? "" : "triforce"}></div>
         {listC}
       </div>
