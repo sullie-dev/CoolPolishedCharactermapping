@@ -1,3 +1,9 @@
+.ListCards-main{
+  width: 75%;
+  height: 100vh;
+  float: left;
+}
+
 /* TRIFORCE LOADER */
 .triforce-container {
     width: 100px;

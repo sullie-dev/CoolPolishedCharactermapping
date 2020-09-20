@@ -21,23 +21,28 @@ class ListCards extends Component {
     axios
       .get(nocors + url)
       .then((response) => {
-        this.setState({ cardInfo: [...this.state.cardInfo, response.data], is_loading: false});
+        this.setState({
+          cardInfo: [...this.state.cardInfo, response.data],
+          is_loading: false,
+        });
       })
       .catch((err) => console.error(err));
   }
   render() {
-    const listC = this.state.cardInfo.map((c) => {
-      return <Card cardInfo={c} key={uuidv4()} />;
-    });
-
     return (
-      <div>
-        <h1>CardViewer</h1>
-        <div
-          className={!this.state.is_loading ? "" : "triforce-container"}
-        ></div>
-        <div className={!this.state.is_loading ? "" : "triforce"}></div>
-        {listC}
+      <div className="ListCards-main">
+        {!this.state.is_loading ? (
+          this.state.cardInfo.map((c) => {
+            return <Card cardInfo={c} key={uuidv4()} />;
+          })
+        ) : (
+          <div>
+            <div
+              className={!this.state.is_loading ? "" : "triforce-container"}
+            ></div>
+            <div className={!this.state.is_loading ? "" : "triforce"}></div>
+          </div>
+        )}
       </div>
     );
   }
