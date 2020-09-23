@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./ListCards.css";
-
+import "./CardPreview.css";
 import axios from "axios";
 import CardPreview from "./CardPreview";
 
@@ -22,15 +22,13 @@ class ListCards extends Component {
       .get(nocors + url)
       .then((response) => {
         this.setState({
-          cardInfo: response.data.data, 
+          cardInfo: response.data.data,
           is_loading: false,
         });
       })
       .catch((err) => console.error(err));
   }
   render() {
-    console.log(this.state.cardInfo);
-
     return (
       <div className="ListCards-main">
         {!this.state.is_loading ? (
