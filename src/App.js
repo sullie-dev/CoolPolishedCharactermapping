@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import ListCards from './ListCards'
 import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import Navs from './NavBar';
+import Dashboard from './Dashboard';
+import Preview from './Preview';
 
 
 function App() {
@@ -18,8 +19,13 @@ function App() {
         />
         <Route
           exact
-          path="/:id"
-          component={ListCards}
+          path="/dashboard/cardholder/:id"
+          component={Dashboard}
+          />
+          <Route
+          exact
+          path="/dashboard/card/:id"
+          component={Preview}
           />
         </Switch>
     </div>

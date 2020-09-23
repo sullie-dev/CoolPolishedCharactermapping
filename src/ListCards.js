@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./ListCards.css";
 
 import axios from "axios";
-import Card from "./Card";
+import CardPreview from "./CardPreview";
 
 class ListCards extends Component {
   constructor(props) {
@@ -15,25 +15,31 @@ class ListCards extends Component {
   }
 
   componentDidMount() {
-    const cardID = this.props.match.params.id;
-    const url = `https://waterlogged-bland-startup.herokuapp.com/${cardID}`;
+    const cardID = this.props.info.id;
+    const url = `https://waterlogged-bland-startup.herokuapp.com/cardholder/${cardID}`;
     const nocors = `https://cors-anywhere.herokuapp.com/`;
     axios
       .get(nocors + url)
       .then((response) => {
         this.setState({
-          cardInfo: [...this.state.cardInfo, response.data],
+          cardInfo: response.data.data, 
           is_loading: false,
         });
       })
       .catch((err) => console.error(err));
   }
   render() {
+    console.log(this.state.cardInfo);
+
     return (
       <div className="ListCards-main">
         {!this.state.is_loading ? (
           this.state.cardInfo.map((c) => {
-            return <Card cardInfo={c} key={uuidv4()} />;
+            return (
+              <div className="ListCards-list">
+                <CardPreview cardInfo={c} key={uuidv4()} />
+              </div>
+            );
           })
         ) : (
           <div>

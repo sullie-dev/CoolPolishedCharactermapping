@@ -4,6 +4,10 @@
   float: left;
 }
 
+.ListCards-main{
+  margin-top: 2em;
+}
+
 /* TRIFORCE LOADER */
 .triforce-container {
     width: 100px;
